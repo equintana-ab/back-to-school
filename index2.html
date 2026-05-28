@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <title>Back to School Promo</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      body {
+        background: #68deff;
+        min-height: 100vh;
+      }
+
+      #promo {
+        width: 100%;
+        background: #68deff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 20px;
+      }
+
+      /* LEFT / IMAGE */
+      /* .left {
+        width: 100%;
+      } */
+
+      .left img {
+        width: clamp(300px, 80vw, 500px);
+        height: auto;
+        display: block;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      /* RIGHT / CONTENT */
+      .right {
+        width: 100%;
+        /* padding: 0 16px; */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* ICONS GRID */
+      .icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+      }
+
+      .icon-box {
+        padding: 10px 0px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+      }
+
+      .icon {
+        width: clamp(90px, 10vw, 130px);
+        display: block;
+        flex: 1;
+      }
+
+      /* COUNTDOWN */
+      .countdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .countdown-label {
+        font-weight: normal;
+        color: #3652fc;
+        font-size: clamp(16px, 3vw, 20px);
+        font-weight: 700;
+        line-height: 27px;
+        -webkit-text-stroke: 4.3px #fff;
+        paint-order: stroke fill;
+      }
+
+      .timer {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: linear-gradient(117deg, rgba(226, 239, 255, 0.36) 0.74%, rgba(226, 239, 255, 0.12) 111.76%);
+        backdrop-filter: blur(8px);
+        padding: 20px 16px;
+        gap: 12px;
+        /* width: 100%; */
+        justify-content: center;
+      }
+
+      .unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .unit .time-label {
+        font-size: clamp(8px, 3vw, 14px);
+        color: #185baa;
+        font-weight: 400;
+      }
+
+      .box {
+        background: #fff;
+        padding: 5px 0px;
+        border-radius: 10px;
+        text-align: center;
+        width: clamp(44px, 13vw, 50px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: #185baa;
+        font-size: clamp(15px, 3vw, 18px);
+        font-weight: 700;
+      }
+
+      .sep {
+        width: 1px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.6);
+        align-self: center;
+        margin-bottom: 18px;
+      }
+
+      /* DESKTOP */
+      @media (width > 767px) {
+        #promo {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 40px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 40px;
+        }
+
+        .left {
+          flex: 1;
+        }
+
+        .right {
+          flex: 1.2;
+          padding: 0;
+          justify-content: center;
+        }
+
+        .icon-box {
+          font-size: 12px;
+        }
+
+        .countdown {
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .countdown-label {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      @media (width > 1023px) {
+        .countdown {
+          flex-direction: row;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="promo">
+      <div class="left">
+        <img src="left-column.png" alt="Back to School" />
+      </div>
+
+      <div class="right">
+        <div class="icons">
+          <a class="icon-box" href="/deals"> <img src="add-on-p99-deals.png" alt="Deals-icon" class="icon" /> </a>
+          <a class="icon-box" href="/bundles"> <img src="super-bundles.png" alt="Bundles-icon" class="icon" /> </a>
+          <a class="icon-box" href="/payment"> <img src="buy-now-pay-later.png" alt="Payment-icon" class="icon" /> </a>
+          <a class="icon-box" href="/delivery">
+            <img src="free-delivery.png" alt="Delivery-icon" class="icon" />
+          </a>
+          <a class="icon-box" href="/installation">
+            <img src="free-installation.png" alt="Installation-icon" class="icon" />
+          </a>
+          <a class="icon-box" href="/vouchers">
+            <img src="vouchers.png" alt="Vouchers-icon" class="icon" />
+          </a>
+        </div>
+
+        <div class="countdown">
+          <span class="countdown-label">Don't miss it out in:</span>
+          <div class="timer">
+            <div class="unit">
+              <h2 id="days" class="box">04</h2>
+              <span class="time-label">days</span>
+            </div>
+            <div class="sep"></div>
+            <div class="unit">
+              <h2 id="hours" class="box">04</h2>
+              <span class="time-label">hours</span>
+            </div>
+            <div class="sep"></div>
+            <div class="unit">
+              <h2 id="mins" class="box">04</h2>
+              <span class="time-label">mins</span>
+            </div>
+            <div class="sep"></div>
+            <div class="unit">
+              <h2 id="secs" class="box">04</h2>
+              <span class="time-label">secs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 4);
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, "0");
+        document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+        document.getElementById("mins").innerText = mins.toString().padStart(2, "0");
+        document.getElementById("secs").innerText = secs.toString().padStart(2, "0");
+      }
+
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    </script>
+  </body>
+</html>

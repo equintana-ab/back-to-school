@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+
+    <title>Back to School Promo</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      body {
+        background: #68deff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      #promo {
+        width: 100%;
+        background: #68deff;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        position: relative;
+      }
+
+      /* LEFT SECTION */
+      .left {
+        flex: 1;
+        position: relative;
+      }
+
+      .title-box {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        transform: rotate(-5deg);
+        width: fit-content;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .title-box h1 {
+        font-size: 40px;
+        font-weight: 900;
+        color: #2d4bff;
+        line-height: 1.1;
+      }
+
+      .title-box h1 span {
+        color: #ff2bd6;
+      }
+
+      /* RIGHT SECTION */
+      .right {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .icon-box {
+        color: #1f4bc8;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .countdown {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .countdown span {
+        font-weight: normal;
+        color: #3652fc;
+        font-size: clamp(16px, 3vw, 24px);
+        font-weight: 700;
+        line-height: 27px;
+        -webkit-text-stroke: 6px #fff;
+        paint-order: stroke fill;
+      }
+
+      .timer {
+        display: flex;
+        gap: 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: linear-gradient(117deg, rgba(226, 239, 255, 0.36) 0.74%, rgba(226, 239, 255, 0.12) 111.76%);
+        backdrop-filter: blur(8px);
+        width: 353px;
+        height: 115px;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .box {
+        background: #fff;
+        padding: 8px 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 70px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: #185baa;
+        font-size: clamp(15px, 3vw, 18px);
+      }
+
+      .box small {
+        font-size: 10px;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="promo">
+      <!-- LEFT -->
+      <div class="left">
+        <img src="Left-column.png" alt="" width="687px" height="580.379px" />
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="icons">
+          <div class="icon-box"><span class="icon">🏷️</span>Add-On P99 Deals</div>
+          <div class="icon-box"><span class="icon">📦</span>Super Bundles</div>
+          <div class="icon-box"><span class="icon">💳</span>Buy Now, Pay Later</div>
+          <div class="icon-box"><span class="icon">🚚</span>Free Delivery</div>
+          <div class="icon-box"><span class="icon">🔧</span>Free Installation</div>
+          <div class="icon-box"><span class="icon">🎟️</span>Vouchers</div>
+        </div>
+
+        <div class="countdown">
+          <span>Don't miss it in:</span>
+
+          <div class="timer">
+            <div>
+              <h2 id="days" class="box">04</h2>
+              <small>days</small>
+            </div>
+            <div>
+              <h2 id="hours" class="box">04</h2>
+              <small>hours</small>
+            </div>
+            <div>
+              <h2 id="mins" class="box">04</h2>
+              <small>mins</small>
+            </div>
+            <div>
+              <h2 id="secs" class="box">04</h2>
+              <small>secs</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Set target date (change this if you want)
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 4);
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, "0");
+        document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+        document.getElementById("mins").innerText = mins.toString().padStart(2, "0");
+        document.getElementById("secs").innerText = secs.toString().padStart(2, "0");
+      }
+
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    </script>
+  </body>
+</html>
