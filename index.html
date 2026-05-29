@@ -28,11 +28,6 @@
         padding: 0px 20px;
       }
 
-      /* LEFT / IMAGE */
-      /* .left {
-        width: 100%;
-      } */
-
       .left img {
         width: clamp(300px, 80vw, 500px);
         height: auto;
@@ -44,7 +39,6 @@
       /* RIGHT / CONTENT */
       .right {
         width: 100%;
-        /* padding: 0 16px; */
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -58,8 +52,6 @@
       }
 
       .icon-box {
-        padding: 10px 0px;
-        font-weight: 700;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -68,7 +60,7 @@
       }
 
       .icon {
-        width: clamp(90px, 10vw, 130px);
+        width: clamp(70px, 9vw, 130px);
         display: block;
         flex: 1;
       }
@@ -79,6 +71,7 @@
         flex-direction: column;
         align-items: center;
         gap: 12px;
+        position: relative;
       }
 
       .countdown-label {
@@ -97,11 +90,14 @@
         border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.4);
         background: linear-gradient(117deg, rgba(226, 239, 255, 0.36) 0.74%, rgba(226, 239, 255, 0.12) 111.76%);
-        backdrop-filter: blur(8px);
-        padding: 20px 16px;
+        backdrop-filter: blur(4px);
+        padding: 13px 16px;
         gap: 12px;
-        /* width: 100%; */
+        position: relative;
         justify-content: center;
+      }
+      .countdown svg {
+        display: none;
       }
 
       .unit {
@@ -137,7 +133,7 @@
         margin-bottom: 18px;
       }
 
-      /* DESKTOP */
+      /* Tablet */
       @media (width > 767px) {
         #promo {
           flex-direction: row;
@@ -149,12 +145,7 @@
           padding: 40px;
         }
 
-        .left {
-          flex: 1;
-        }
-
         .right {
-          flex: 1.2;
           padding: 0;
           justify-content: center;
         }
@@ -172,10 +163,23 @@
           width: 100%;
           text-align: center;
         }
+        .timer {
+          padding: 20px 16px;
+          z-index: 999;
+        }
       }
+      /* Desktop */
       @media (width > 1023px) {
         .countdown {
           flex-direction: row;
+        }
+        .countdown svg {
+          display: block;
+          position: absolute;
+          bottom: -64px;
+          right: -20px;
+          z-index: 0;
+          width: 120px;
         }
       }
     </style>
@@ -226,6 +230,13 @@
               <span class="time-label">secs</span>
             </div>
           </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="144" height="108" viewBox="0 0 144 108" fill="none">
+            <path
+              d="M139.948 103.74C143.644 17.1051 49.3599 24.112 47.2985 67.2054C45.7326 99.9414 115.568 78.9663 99.1501 46.1841C69.3694 -13.2791 3.85487 7.2953 3.85487 7.2953"
+              stroke="#FF00F8"
+              stroke-width="7.70769"
+              stroke-linecap="round" />
+          </svg>
         </div>
       </div>
     </section>
